@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Understanding Scoping</title>
+</head>
+<body>
+<p id = "value"></p>
+<script>
+
+var foo = 1;
+function bar() {
+	if (!foo) {
+		var foo = 10; 
+	}
+	alert(foo);  //this is the local var foo that is assigned within the function.  
+	
+}
+bar();
+
+alert(foo); // this is the global var foo which is unchanged by function bar()
+
+function barNext() {
+	if (!foo) {
+		foo = 10; 
+	}
+	alert(foo);  
+	
+}
+barNext();
+
+</script>
+
+</body>
+</html>
